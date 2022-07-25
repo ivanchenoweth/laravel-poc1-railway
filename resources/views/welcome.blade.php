@@ -21,13 +21,14 @@
         </style>
     </head>
     <body class="antialiased">
+        <hr>
         <div>
             2022-Jul-25 12:55
         </div>
-        <div>
-            Github repository: 
-            <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
+        <div>            
+            <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway" target="_blank"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
         </div>
+        <hr>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -136,4 +137,40 @@
             </div>
         </div>
     </body>
+
+    <script src="https://unpkg.com/@authorizerdev/authorizer-js/lib/authorizer.min.js"></script>
+
+<script type="text/javascript">
+	const authorizerRef = new authorizerdev.Authorizer({
+		authorizerURL: `https://authorizer-railway-production-poc1.up.railway.app/`,
+		redirectURL: window.location.origin,
+		clientID: 'fe1123ee-09b5-435b-8878-eb6a6b1e2313', // obtain your client id from authorizer dashboard
+	});
+
+	// use the button selector as per your application
+	const logoutBtn = document.getElementById('logout');
+	logoutBtn.addEventListener('click', async function () {
+		await authorizerRef.logout();
+		window.location.href = '/';
+	});
+
+	async function onLoad() {
+		const res = await authorizerRef.authorize({
+			response_type: 'code',
+			use_refresh_token: false,
+		});
+		if (res && res.access_token) {
+			// you can use user information here, eg:
+			const user = await authorizerRef.getProfile({
+				Authorization: `Bearer ${res.access_token}`,
+			});
+			const userSection = document.getElementById('user');
+			const logoutSection = document.getElementById('logout-section');
+			logoutSection.classList.toggle('hide');
+			userSection.innerHTML = `Welcome, ${user.email}`;
+		}
+	}
+	onLoad();
+</script>
+
 </html>
