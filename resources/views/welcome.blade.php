@@ -22,8 +22,12 @@
     </head>
     <body class="antialiased">
         <div>
-            2022-05-23 420pm
-        </div>    
+            2022-Jul-25 12:55
+        </div>
+        <div>
+            Github repository: 
+            <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
+        </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
