@@ -23,17 +23,18 @@
     <body class="antialiased">
         <hr>
         <div>
-            <h1> Welcome - V1.1 - 2022-Jul-25 15:44 </h1>
+            <h1> Welcome - V1.2 - 2022-Jul-25 15:51 </h1>
         </div>
         <div>            
             <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway" target="_blank"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
         </div>
 
-        <div id="logout"></div>
+        <div id="User">User</div>
 
         <div id="logout-section"></div>
 
-        <div id="User"></div>
+        <div id="logout">Logout</div>
+    
 
         <hr>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -148,7 +149,7 @@
 <script src="https://unpkg.com/@authorizerdev/authorizer-js/lib/authorizer.min.js"></script>
 <script type="text/javascript">
 	const authorizerRef = new authorizerdev.Authorizer({
-		authorizerURL: 'https://authorizer-railway-production-poc1.up.railway.app/app',
+		authorizerURL: 'https://authorizer-railway-production-poc1.up.railway.app',
 		redirectURL: window.location.origin,
 		clientID: 'fe1123ee-09b5-435b-8878-eb6a6b1e2313', // obtain your client id from authorizer dashboard
 	});
