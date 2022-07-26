@@ -23,7 +23,7 @@
     <body class="antialiased">
         <hr>
         <div>
-            <h1> Welcome - V1.2.1 - 2022-Jul-25 10:09 </h1>
+            <h1> Welcome - V1.2.2 - 2022-Jul-25 10:18 </h1>
         </div>
         <div>            
             <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway" target="_blank"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
@@ -167,9 +167,11 @@
 		});
 		if (res && res.access_token) {
 			// you can use user information here, eg:
+            console.log('you can use user information here ...');
 			const user = await authorizerRef.getProfile({
 				Authorization: `Bearer ${res.access_token}`,
 			});
+            console.log(user, "user");
 			const userSection = document.getElementById('user');
 			const logoutSection = document.getElementById('logout-section');
 			logoutSection.classList.toggle('hide');
