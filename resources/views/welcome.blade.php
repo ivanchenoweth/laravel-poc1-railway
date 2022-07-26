@@ -23,17 +23,16 @@
     <body class="antialiased">
         <hr>
         <div>
-            <h1> Welcome - V1.2 - 2022-Jul-25 15:51 </h1>
+            <h1> Welcome - V1.2.1 - 2022-Jul-25 10:09 </h1>
         </div>
         <div>            
             <a href=" https://github.com/ivanchenoweth/laravel-poc1-railway" target="_blank"> https://github.com/ivanchenoweth/laravel-poc1-railway</a>       
         </div>
 
-        <div id="User">User</div>
-
-        <div id="logout-section"></div>
-
-        <div id="logout">Logout</div>
+        <div id="user"></div>
+        <div class="hide" id="logout-section">
+         <span id="logout" class="logout">logout</span>
+        </div>
     
 
         <hr>
